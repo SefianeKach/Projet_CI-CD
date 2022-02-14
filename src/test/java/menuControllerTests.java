@@ -43,5 +43,22 @@ public class menuControllerTests {
         System.setErr(originalErr);
     }
 
+    /** 
+    @Test
+    @Order(1)
+    @DisplayName("get all menus")
+    public void getMenus() {
+        int exitCode = cmd.execute("listMenu");
+        assertEquals(0, exitCode);
+    }
+
+    @Test
+    @Order(2)
+    @DisplayName("delete a menu")
+    public void deleteMenu() {
+        int exitCode = cmd.execute("deleteMenu", "-id=1");
+        assertEquals(0, exitCode);
+    }
+    */
 
 }
