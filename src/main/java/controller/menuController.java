@@ -1,13 +1,23 @@
 package controller;
-
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
-import picocli.CommandLine.Option;
-import picocli.CommandLine.Parameters;
+
+@Command(name="menuCli",
+    subcommands = {
+        listMenu.class,
+        deleteMenu.class
+    }
+)
+public class menuController implements Runnable {
+
+    public static void main(String[] args) {
+        CommandLine.run(new menuController(), args);
+    }
+
+    @Override
+    public void run() {
+        System.out.println();
+    }
 
 
-@Command(name = "menuCli", mixinStandardHelpOptions = true, version = "1.0",
-        description = "Intérragis avec le menu")
-public class menuController {
-    
 }
