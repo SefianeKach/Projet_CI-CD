@@ -18,21 +18,21 @@ public class deleteMenu implements Runnable{
 
     @Parameters(description="menu to delete")
     private String idMenu;
-    
+
     @Override
     public void run() {
         try {
                 
-            // create a client
+            // génére le clien
             var client = HttpClient.newHttpClient();
 
-            // create a request
+            // envoie un request
             var request = HttpRequest.newBuilder(
                             URI.create(this.server + "/menus/" + this.idMenu))
                     .DELETE()
                     .build();
 
-            // use the client to send the request
+            //  utilise le client pour
             var response = client.send(request, HttpResponse.BodyHandlers.ofString());
             }
             catch (IOException e) {
